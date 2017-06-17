@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "851752862037",
+    "firebase_url": "https://bharathacks-1beec.firebaseio.com",
+    "project_id": "bharathacks-1beec",
+    "storage_bucket": "bharathacks-1beec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851752862037:android:0a9e6d1e3b533bca",
+        "android_client_info": {
+          "package_name": "com.dipakkr.github.bharathacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851752862037-nutq5pmmlss6fremah3e5b4ab2isab6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFyl8URKTLM0MyVDv3xYronXXI69ihgmk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
