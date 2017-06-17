@@ -60,9 +60,8 @@ public class MainActivity extends AppCompatActivity {
         bt_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                phone_number = et_phone.getText().toString();
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class));
-                intent.putExtra("phone",phone_number);
+
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
             }
         });
