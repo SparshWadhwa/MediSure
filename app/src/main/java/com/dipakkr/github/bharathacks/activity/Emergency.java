@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.dipakkr.github.bharathacks.R;
@@ -23,6 +24,7 @@ public class Emergency extends AppCompatActivity {
     TextView na,add;
     String placeid;
 
+
     private DatabaseReference mRef;
     private FirebaseDatabase database;
 
@@ -30,6 +32,8 @@ public class Emergency extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
+
+
 
         mRef = FirebaseDatabase.getInstance().getReference("user");
 

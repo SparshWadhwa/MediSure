@@ -3,6 +3,7 @@ package com.dipakkr.github.bharathacks.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.dipakkr.github.bharathacks.R;
@@ -34,11 +36,13 @@ public class EmergencyFragment extends Fragment implements View.OnClickListener,
     protected Context context;
     TextView txtLat;
     Location location;
+    CheckBox checkBox;
 
     String provider;
     protected String latitude, longitude;
     protected boolean gps_enabled, network_enabled;
     double lat,lon;
+    Button ambu;
 
     public EmergencyFragment() {
         // Required empty public constructor
@@ -47,6 +51,7 @@ public class EmergencyFragment extends Fragment implements View.OnClickListener,
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             //    ActivityCompat#requestPermissions
@@ -76,10 +81,16 @@ public class EmergencyFragment extends Fragment implements View.OnClickListener,
         // Inflate the layout for this fragment
         rootview = inflater.inflate(R.layout.frag_emergency, container, false);
         upButton = (Button) rootview.findViewById(R.id.ambulance);
+        checkBox = (CheckBox) rootview.findViewById(R.id.hide);
         upButton.setOnClickListener(this);
+        ambu = (Button) rootview.findViewById(R.id.ambulance);
+
+
+
 
         return rootview;
     }
+
 
     @Override
     public void onClick(View view) {
@@ -109,5 +120,7 @@ public class EmergencyFragment extends Fragment implements View.OnClickListener,
     public void onProviderDisabled(String s) {
         Log.d("Latitude","disable");
     }
+
+
 
 }

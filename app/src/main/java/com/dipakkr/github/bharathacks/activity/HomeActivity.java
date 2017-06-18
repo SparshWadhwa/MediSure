@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.dipakkr.github.bharathacks.ClinicsFragment;
 import com.dipakkr.github.bharathacks.HospitalFragment;
@@ -16,6 +17,7 @@ import com.dipakkr.github.bharathacks.MedicalFragment;
 import com.dipakkr.github.bharathacks.R;
 import com.dipakkr.github.bharathacks.Utils.HelpUtils;
 import com.dipakkr.github.bharathacks.fragment.EmergencyFragment;
+import com.dipakkr.github.bharathacks.fragment.FirstAidFragment;
 
 /**
  * Created by root on 6/17/17.
@@ -26,6 +28,11 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+        Fragment fragment = new EmergencyFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content, fragment, fragment.getClass().getSimpleName()).commit();
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -46,12 +53,11 @@ public class HomeActivity extends AppCompatActivity {
 
                     return true;
 
-                case R.id.navigation_dashboard:
-
-                    return true;
-
                 case R.id.navigation_notifications:
 
+                    Fragment fragment1 = new FirstAidFragment();
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.content, fragment1, fragment1.getClass().getSimpleName()).commit();
 
                     return true;
             }
@@ -59,4 +65,6 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     };
+
+
 }
