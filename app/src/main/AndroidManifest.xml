@@ -33,7 +33,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".activity.ChooserActivity">
+        <activity android:name=".activity.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,6 +49,7 @@
 
         <activity android:name=".activity.Emergency" />
         <activity android:name=".activity.UserLocation" />
+        <activity android:name=".activity.ChooserActivity" />
 
 
 
