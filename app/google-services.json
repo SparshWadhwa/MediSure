@@ -1,27 +1,35 @@
 {
   "project_info": {
-    "project_number": "851752862037",
-    "firebase_url": "https://bharathacks-1beec.firebaseio.com",
-    "project_id": "bharathacks-1beec",
-    "storage_bucket": "bharathacks-1beec.appspot.com"
+    "project_number": "461771068713",
+    "firebase_url": "https://medisure-abc86.firebaseio.com",
+    "project_id": "medisure-abc86",
+    "storage_bucket": "medisure-abc86.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:851752862037:android:0a9e6d1e3b533bca",
+        "mobilesdk_app_id": "1:461771068713:android:0a9e6d1e3b533bca",
         "android_client_info": {
           "package_name": "com.dipakkr.github.bharathacks"
         }
       },
       "oauth_client": [
         {
-          "client_id": "851752862037-nutq5pmmlss6fremah3e5b4ab2isab6d.apps.googleusercontent.com",
+          "client_id": "461771068713-3rva61nkf89beancpgqdkcncm99dflr5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dipakkr.github.bharathacks",
+            "certificate_hash": "5e0f84da1bf92d3aafb2e0b9270d1cb7f6ce6011"
+          }
+        },
+        {
+          "client_id": "461771068713-9efu3uenmfn6int5tm0g131t3fabr0r4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCFyl8URKTLM0MyVDv3xYronXXI69ihgmk"
+          "current_key": "AIzaSyDPJWhiM9TVEeok8W5Nq62YRNcSaEdOLm0"
         }
       ],
       "services": {
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461771068713-9efu3uenmfn6int5tm0g131t3fabr0r4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

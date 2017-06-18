@@ -1,5 +1,6 @@
 package com.dipakkr.github.bharathacks.activity;
 
+import android.nfc.Tag;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +9,9 @@ import android.widget.TextView;
 
 import com.dipakkr.github.bharathacks.R;
 import com.dipakkr.github.bharathacks.Utils.JsonParsing;
+import com.dipakkr.github.bharathacks.model.UserInfo;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,16 +21,24 @@ public class Emergency extends AppCompatActivity {
     String name,address;
     String latitude,longitude;
     TextView na,add;
+    String placeid;
+
+    private DatabaseReference mRef;
+    private FirebaseDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
+
+        mRef = FirebaseDatabase.getInstance().getReference("user");
 
         lat = getIntent().getStringExtra("Latitude");
         lon = getIntent().getStringExtra("Longitude");
 
         na = (TextView) findViewById(R.id.name);
         add = (TextView) findViewById(R.id.address);
+
 
         Log.d("lat------->",lat);
         Log.d("lon------>",lon);
@@ -80,8 +92,14 @@ public class Emergency extends AppCompatActivity {
                 address  = json.getString("vicinity");
                 Log.d("address-->",""+address);
 
+                placeid = json.getString("place_id");
+                Log.d("Place id ---->> ","" + placeid);
+
                 na.setText(name);
                 add.setText(address);
+
+                UserInfo info =new UserInfo(placeid,latitude,longitude);
+                mRef.child(placeid).setValue(info);
 
 
             }catch (Exception e){
@@ -89,10 +107,7 @@ public class Emergency extends AppCompatActivity {
             }
             super.onPostExecute(jsonObj);
         }
-
-
     }
-
 
 
 }

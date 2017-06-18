@@ -1,21 +1,17 @@
 package com.dipakkr.github.bharathacks.model;
 
 /**
- * Created by root on 6/18/17.
+ * Created by anshul on 18/6/17.
  */
 
-public class UserInfo {
-    public String placeid;
+public class PatientRequestData {
+
     public String latitude;
     public String longitude;
 
-    public UserInfo(String placeid,String latitude, String longitude){
-        this.placeid =placeid;
+    public PatientRequestData(String latitude, String longitude){
         this.latitude = latitude;
         this.longitude = longitude;
-    }
-    public UserInfo(){
-
     }
 
     public String getLatitude() {
@@ -34,11 +30,5 @@ public class UserInfo {
         this.longitude = longitude;
     }
 
-    public String getPlaceid() {
-        return placeid;
-    }
 
-    public void setPlaceid(String placeid) {
-        this.placeid = placeid;
-    }
 }
