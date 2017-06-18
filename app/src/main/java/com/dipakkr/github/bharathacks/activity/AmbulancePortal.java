@@ -40,14 +40,8 @@ public class AmbulancePortal extends AppCompatActivity {
         mRef = FirebaseDatabase.getInstance().getReference("user");
 
         listView = (ListView) findViewById(R.id.list);
-        String[] values = new String[] { "User 1 Request",
-                "User 2 Request",
-                "User 3 Request",
-                "User 4 Request",
-                "User 5 Request",
-                "User 6 Request",
-                "User 7 Request",
-                "User 8 Request"
+        String[] values = new String[] { "REQUEST FOR AMBULANCE 1"
+
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, values);
@@ -67,7 +61,7 @@ public class AmbulancePortal extends AppCompatActivity {
                         longg = data.getLongitude();
                         Log.e("LATITUDE ----->> ",latt);
                         Log.e("Longitude ---- >> ", longg);
-                        Toast.makeText(AmbulancePortal.this, "Comiwbfuwef", Toast.LENGTH_SHORT).show();
+
 
                     }
 
@@ -103,6 +97,8 @@ public class AmbulancePortal extends AppCompatActivity {
                 int itemPosition     = position;
                 if(itemPosition ==0){
                     Intent i = new Intent(getApplicationContext(),UserLocation.class);
+                    i.putExtra("Latitude",latt);
+                    i.putExtra("Longitude",longg);
                     startActivity(i);
                 }
 

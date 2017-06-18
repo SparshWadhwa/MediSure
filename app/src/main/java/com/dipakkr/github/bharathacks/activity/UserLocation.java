@@ -18,11 +18,15 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class UserLocation extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    String latitude,longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_location);
+        latitude = getIntent().getExtras().getString("Latitude");
+        longitude = getIntent().getExtras().getString("Longitude");
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -43,8 +47,9 @@ public class UserLocation extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-
-        LatLng location = new LatLng(28.7153613,77.0715365);
+        double lat = Double.parseDouble(latitude) ;
+        double lon = Double.parseDouble(longitude) ;
+        LatLng location = new LatLng(lat,lon);
         mMap.addMarker(new MarkerOptions().position(location).title("USER LOCATION"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
     }
